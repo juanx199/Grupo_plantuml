@@ -1,0 +1,9 @@
+@startuml
+
+introducir llave as llave
+
+Carro <- Motor : llave
+Motor <-- Carro : encender()
+
+
+@enduml
