@@ -1,9 +1,51 @@
 @startuml
+interface Servicios {
+    + pasear(): void
+    + alimentar(): void
+    + bañar(): void
+}
 
-introducir llave as llave
+class Animal {
+    + nombre: String
+    + edad: int
+}
 
-Carro <- Motor : llave
-Motor <-- Carro : encender()
+class Perro {
+    + raza: String
+}
 
+class Gato {
+    + color: String
+}
+
+class Lagarto {
+    + tipo: String
+}
+
+class Tienda {
+    - productos: List<Producto>
+    + vender(producto: Producto): void
+}
+
+class Producto {
+    + nombre: String
+    + precio: float
+}
+
+class Cliente{
+    + nombre: String
+}
+
+Tienda ..> Servicios
+Cliente --|> Tienda
+Tienda  *--  Producto
+Tienda o-- Animal
+Animal <|-- Perro
+Animal <|-- Gato
+Animal <|-- Lagarto
+
+Servicios <|.. Perro
+Servicios <|.. Gato
+Servicios <|.. Lagarto
 
 @enduml
