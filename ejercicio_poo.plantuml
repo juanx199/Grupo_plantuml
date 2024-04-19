@@ -5,7 +5,8 @@ interface Servicios {
     + bañar(): void
 }
 
-class Animal {
+
+class Animal { 
     + nombre: String
     + edad: int
 }
@@ -19,7 +20,7 @@ class Gato {
 }
 
 class Lagarto {
-    + tipo: String
+    + tamaño: String
 }
 
 class Tienda {
@@ -32,14 +33,25 @@ class Producto {
     + precio: float
 }
 
+class champu {
+    
+}
+
+class comida {
+
+}
+
+class correa {
+
+}
 class Cliente{
     + nombre: String
 }
 
 Tienda ..> Servicios
-Cliente --|> Tienda
-Tienda  *--  Producto
-Tienda o-- Animal
+Cliente --|> Tienda 
+Tienda *-- Producto 
+Tienda o-- Animal 
 Animal <|-- Perro
 Animal <|-- Gato
 Animal <|-- Lagarto
@@ -47,5 +59,9 @@ Animal <|-- Lagarto
 Servicios <|.. Perro
 Servicios <|.. Gato
 Servicios <|.. Lagarto
+
+Producto <|-- champu
+Producto <|-- comida
+Producto <|-- correa
 
 @enduml
